@@ -11,11 +11,10 @@ class Tower
   end
 
   def longest_tower
-    [[56, 90],
-     [60, 95],
-     [65, 100],
-     [68, 110],
-     [70, 150],
-     [75, 190]]
+    sort_by_height
+  end
+
+  def sort_by_height
+    @humans.sort_by! {|human| human.height}
   end
 end

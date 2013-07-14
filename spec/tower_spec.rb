@@ -17,14 +17,13 @@ describe Tower do
     subject.humans.last.weight.should be 110
   end
 
-  it 'should arrange the tower with shorter and lighter first' do
-    subject.longest_tower.should == [[56, 90],
-                                    [60, 95],
-                                    [65, 100],
-                                    [68, 110],
-                                    [70, 150],
-                                    [75, 190]]
+  it 'should sort by height' do
+    subject.sort_by_height
+    subject.humans.first.height.should == 56
+    subject.humans.last.height.should == 75
+  end
 
+  it 'should arrange the tower with shorter and lighter first' do
     subject.longest_tower.size.should == 6
   end
 end
